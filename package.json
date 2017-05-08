@@ -1,9 +1,21 @@
 {
   "name": "my-memories",
   "version": "0.1.0",
-  "private": true,
+  "scripts": {
+    "start-react-server": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "start-express-server": "node ./bin/www",
+    "start": "npm run start-react-server && npm run start-express-server"
+  },
   "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
     "fluxxor": "^1.7.3",
+    "morgan": "~1.8.1",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -12,10 +24,5 @@
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+  "proxy": "http://localhost:3001"
 }

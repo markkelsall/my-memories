@@ -8,23 +8,23 @@ export default class CreateAlbumLayout extends AlbumComponent {
     constructor () {
         super (...arguments);
         this.state = {
-            suggestBuzzword: ""
+            addAlbum: ""
         };
     }
 
-    handleSuggestedWordChange (e) {
-        this.setState({suggestBuzzword: e.target.value});
+    handleSuggestedAlbumChange (e) {
+        this.setState({addAlbum: e.target.value});
     }
 
     handleSubmitForm (e) {
         e.preventDefault();
-        if (this.state.suggestBuzzword.trim()) {
+        if (this.state.addAlbum.trim()) {
             let payload = {
-                album: this.state.suggestBuzzword,
+                album: this.state.addAlbum,
                 documentType: 'album'
             };
             this.getFlux().actions.create(payload);
-            this.setState({suggestBuzzword: ""});
+            this.setState({addAlbum: ""});
         }
     }
 
@@ -33,8 +33,8 @@ export default class CreateAlbumLayout extends AlbumComponent {
             <div>
                 <h2>Create a New Album</h2>
                 <form onSubmit={this.handleSubmitForm.bind(this)}>
-                    <input type="text" value={this.state.suggestBuzzword}
-                        onChange={this.handleSuggestedWordChange.bind(this)}/>
+                    <input type="text" value={this.state.addAlbum}
+                        onChange={this.handleSuggestedAlbumChange.bind(this)}/>
                     <input type="submit" value="Add"/>
                 </form>
             </div>
