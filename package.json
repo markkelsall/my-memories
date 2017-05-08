@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "scripts": {
     "start-react-server": "react-scripts start",
+    "start-express-server": "PORT=3001 node ./bin/www",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "start-express-server": "node ./bin/www",
     "start": "npm run start-react-server && npm run start-express-server"
   },
   "dependencies": {
