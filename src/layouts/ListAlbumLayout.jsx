@@ -8,12 +8,7 @@ import reactMixin from 'react-mixin';
 export default class ListAlbumLayout extends AlbumComponent {
 
     componentDidMount () {
-        this.load();
-    //     fetch('/users')
-    //   .then(function (res) {
-    //     console.log(res.json());
-    //   })
-    //   .then(users => this.setState({ users }));
+        this.query();
     }
 
     constructor () {

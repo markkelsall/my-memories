@@ -1,18 +1,11 @@
 var CouchbaseClient = {
-    albumList: [
-        {
-            documentType: 'album',
-            album: 'test',
-            id: 'album::1'
-        },
-        {
-            documentType: 'album',
-            album: 'test1',
-            id: 'album::2'
-        }
-    ],
-    load: function(query, success, failure) {
-        success(this.albumList);
+    query: function(query, success, failure) {
+        fetch('/albums').then(function (res) {
+            console.log(res);
+            return res.json();
+        }).then(function (list) {
+            success(list);
+        });
     },
 
     create: function(word, success, failure) {

@@ -7,7 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "start": "npm run start-react-server && npm run start-express-server"
+    "start": "npm run start-express-server | npm run start-react-server"
   },
   "dependencies": {
     "body-parser": "~1.17.1",

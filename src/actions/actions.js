@@ -6,12 +6,12 @@ let constants = {
 };
 
 let actions = {
-    loadMany: function(request) {
+    query: function(request) {
         let response = {
             request,
             action: `${constants.LOAD_MANY}_${request.documentType.toUpperCase()}`
         };
-        CouchbaseClient.load(request, (albumList) => {
+        CouchbaseClient.query(request, (albumList) => {
             response.albumList = albumList;
             this.dispatch(response.action, response);
         }, (error) => {

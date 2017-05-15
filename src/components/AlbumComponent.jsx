@@ -50,8 +50,8 @@ export default class AlbumComponent extends Layout {
         };
     }
 
-    load () {
-        this.getFlux().actions.loadMany({documentType:store});
+    query () {
+        this.getFlux().actions.query({documentType:store});
     }
 };
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;
